@@ -8,3 +8,4 @@ RUN npm run build
 # Stag2 - 1
 FROM nginx:1.21.6-alpine
 COPY --from=BUILD /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
