@@ -1,5 +1,5 @@
 # Stag1 - Build
-FROM maven:3.8.5-ibmjava-8-alpine as BUILD
+FROM arm64v8/maven:3.8.5-ibm-semeru-11-focal as BUILD
 WORKDIR /app
 COPY . .
 RUN ./mvnw clean package
