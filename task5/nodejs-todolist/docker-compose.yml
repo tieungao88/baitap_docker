@@ -2,14 +2,14 @@ version: "3.9"
 
 services:
   db:
-    images: postgres:14.2-alpine
+    image: postgres:14.2-alpine
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - db-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD: "postgres"
   app:
-    images: task5
+    image: task5
     ports:
       - "8181:8080"
 volumes:
