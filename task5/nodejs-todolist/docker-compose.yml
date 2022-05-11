@@ -7,7 +7,7 @@ services:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - db-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD: "postgres"
+      POSTGRES_PASSWORD: "postgres"
   app:
     image: task5
     ports:
