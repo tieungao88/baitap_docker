@@ -2,7 +2,7 @@
 FROM arm64v8/maven:3.8.5-ibm-semeru-11-focal as BUILD
 WORKDIR /app
 COPY . .
-RUN ./mvnw clean package
+RUN mvn clean package -Dmaven.test.skip=true
 
 # Stag2 - Docker package
 FROM openjdk:8-alpine
