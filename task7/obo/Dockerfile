@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 RUN mvn clean package -Dmaven.test.skip=true
 
-# # Stag2 - Docker package
-# FROM openjdk:8-alpine
-# COPY --from=BUILD /app/target/websocket-demo-0.0.1-SNAPSHOT.jar .
-# CMD java -Djava.security.egd=file:/dev/./urandom -jar websocket-demo-0.0.1-SNAPSHOT.jar
+# Stag2 - Docker package
+FROM openjdk:8-alpine
+COPY --from=BUILD /app/target/*.jar .
+CMD java -Djava.security.egd=file:/dev/./urandom -jar *.jar
