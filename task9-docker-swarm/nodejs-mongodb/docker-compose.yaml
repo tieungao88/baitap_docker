@@ -3,21 +3,21 @@ version: "3.9"
 services:
   mongodb:
     image: mongo:latest
-    # networks:
-    #   - myapp
-    # volumes:
-    #   - db_data:/data/db
-    # deploy:
-    #   placement:
-    #     constraints:
-    #       - node.labels.workload == abc
-    # environment:
-    #   # - "constraint:node==ubuntu02"
-    #   MONGO_INITDB_ROOT_USERNAME: "root"
-    #   MONGO_INITDB_ROOT_PASSWORD: "example"
+    networks:
+      - myapp
+    volumes:
+      - db_data:/data/db
+    deploy:
+      placement:
+        constraints:
+          - node.labels.workload == abc
+    environment:
+      # - "constraint:node==ubuntu02"
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "example"
 
-# networks:
-#   myapp:
-#     driver: overlay
-# volumes:
-#   db_data: {}
+networks:
+  myapp:
+    driver: overlay
+volumes:
+  db_data: {}
