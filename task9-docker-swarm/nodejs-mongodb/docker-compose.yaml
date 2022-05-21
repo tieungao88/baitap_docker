@@ -5,8 +5,8 @@ services:
     image: mongo:latest
     # networks:
     #   - myapp
-    volumes:
-      - db_data:/data/db
+    # volumes:
+    #   - db_data:/data/db
     environment:
       # - "constraint:node==ubuntu02"
       MONGO_INITDB_ROOT_USERNAME: "root"
@@ -15,5 +15,5 @@ services:
 # networks:
 #   myapp:
 #     driver: overlay
-volumes:
-  db_data: {}
+# volumes:
+#   db_data: {}
