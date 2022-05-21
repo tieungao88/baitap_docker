@@ -7,6 +7,10 @@ services:
       - myapp
     volumes:
       - db_data:/data/db
+    deploy:
+      placement:
+        constraints:
+          - node.labels.workload == abc
     environment:
       # - "constraint:node==ubuntu02"
       MONGO_INITDB_ROOT_USERNAME: "root"
