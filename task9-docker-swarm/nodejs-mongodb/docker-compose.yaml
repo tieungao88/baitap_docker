@@ -3,15 +3,15 @@ version: "3.9"
 services:
   mongodb:
     image: mongo:latest
-    # networks:
-    #   - myapp
+    networks:
+      - myapp
     volumes:
       - db_data:/data/db:rw
     environment:
       - "constraint:node==ubuntu02"
 
-# networks:
-  # myapp:
-  #   driver: overlay
+networks:
+  myapp:
+    driver: overlay
 volumes:
   db_data: {}
