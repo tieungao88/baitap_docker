@@ -9,6 +9,8 @@ services:
     environment:
       POSTGRES_PASSWORD: "postgres"
   app:
+    depends_on:
+      - db
     image: task5
     ports:
       - "8181:8080"
