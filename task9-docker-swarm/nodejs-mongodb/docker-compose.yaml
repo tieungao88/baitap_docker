@@ -10,12 +10,20 @@ services:
     deploy:
       placement:
         constraints:
-          - node.labels.workload == abc
+          - node.labels.workload==abc
     environment:
       # - "constraint:node==ubuntu02"
       MONGO_INITDB_ROOT_USERNAME: "root"
       MONGO_INITDB_ROOT_PASSWORD: "example"
-
+  nodeapp:
+    image: tieungao1988/task9:v1
+    ports:
+      - 8000:3000
+    environment:
+      MONGODB_URI: "mongodb://mongodb:27017/demo"
+      PORT: 3000
+    networks:
+      - myapp
 networks:
   myapp:
     driver: overlay
