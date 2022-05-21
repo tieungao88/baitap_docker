@@ -9,8 +9,8 @@ services:
       - db_data:/data/db:rw
     environment:
       - "constraint:node==ubuntu02"
-      - MONGO_INITDB_ROOT_USERNAME: "root"
-      - MONGO_INITDB_ROOT_PASSWORD: "example"
+      - "MONGO_INITDB_ROOT_USERNAME: root"
+      - "MONGO_INITDB_ROOT_PASSWORD: example"
     restart: always
 
 networks:
