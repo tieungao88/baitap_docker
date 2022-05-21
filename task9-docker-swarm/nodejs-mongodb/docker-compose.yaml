@@ -20,7 +20,7 @@ services:
     ports:
       - 8000:3000
     environment:
-      MONGODB_URI: "mongodb://mongodb:27017/demo"
+      MONGODB_URI: "mongodb://root:example@mongodb:27017/demo"
       PORT: 3000
     networks:
       - myapp
