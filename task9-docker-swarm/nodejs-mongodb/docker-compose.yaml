@@ -28,6 +28,8 @@ services:
       PORT: 3000
     networks:
       - myapp
+    deploy:
+      replicas: 2
 networks:
   myapp:
     driver: overlay
