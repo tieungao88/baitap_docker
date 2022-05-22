@@ -11,10 +11,9 @@ services:
       placement:
         constraints:
           - node.labels.workload==abc
-    # environment:
-      # - "constraint:node==ubuntu02"
-      # MONGO_INITDB_ROOT_USERNAME: "root"
-      # MONGO_INITDB_ROOT_PASSWORD: "example"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "example"
     ports:
       - 27017:27017
   nodeapp:
@@ -24,7 +23,7 @@ services:
     ports:
       - 8000:3000
     environment:
-      MONGODB_URI: "mongodb://mongodb:27017/demo"
+      MONGODB_URI: "root:example@mongodb://mongodb:27017/demo"
       PORT: 3000
     networks:
       - myapp
