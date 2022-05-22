@@ -20,7 +20,7 @@ services:
   nodeapp:
     depends_on:
       - mongodb
-    image: thuongnn1997/nodejs-app:latest
+    image: tieungao1988/task9:v1
     ports:
       - 8000:3000
     environment:
