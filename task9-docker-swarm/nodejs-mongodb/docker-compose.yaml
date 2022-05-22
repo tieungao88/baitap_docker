@@ -11,7 +11,7 @@ services:
       placement:
         constraints:
           - node.labels.workload==abc
-    environment:
+    # environment:
       # - "constraint:node==ubuntu02"
       # MONGO_INITDB_ROOT_USERNAME: "root"
       # MONGO_INITDB_ROOT_PASSWORD: "example"
